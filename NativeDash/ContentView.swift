@@ -8,23 +8,34 @@
 import SwiftUI
 
 extension Color {
-    public static var emptyRingColor: Color {
-        return Color(red: 0.8588235294117647, green: 0.9098039215686274, blue: 0.9372549019607843)
+    public static var emptyRingColorLight: Color {
+        return Color(red: 0.858, green: 0.909, blue: 0.937)
+    }
+    
+    public static var emptyRingColorDark: Color {
+        return Color(red:0.1, green: 0.11, blue: 0.12)
     }
 
     public static var fillColor: Color {
-        return Color(red: 0.30980392156862746, green: 0.5568627450980392, blue: 0.6980392156862745)
+        return Color(red: 0.309, green: 0.556, blue: 0.698)
     }
 }
 
 struct PeriodTimerRing: View {
     @Binding var progress: CGFloat
+    @Environment(\.colorScheme) var colorScheme
     
     
     var body: some View {
         ZStack {
             Circle()
-                .stroke(Color.emptyRingColor, lineWidth: 20)
+                .stroke(
+                    colorScheme == .light ?
+                    Color.emptyRingColorLight
+                    :
+                        Color.emptyRingColorDark,
+                    lineWidth: 20
+                )
             Circle()
                 .rotation(Angle(degrees:(-(360*progress)-90)))
                 .trim(from: 0, to: progress)
@@ -32,12 +43,15 @@ struct PeriodTimerRing: View {
                     Color.fillColor,
                     style: StrokeStyle(lineWidth: 20, lineCap: .round)
             )
+            Text("14:23")
+                .font(.largeTitle)
+                .fontWeight(.semibold)
         }.frame(idealWidth: 300, idealHeight: 300, alignment: .center)
     }
 }
 
 struct ContentView: View {
-    @State private var progress: CGFloat = 0.2
+    @State private var progress: CGFloat = 0.6
     var body: some View {
         ZStack {
             PeriodTimerRing(progress: $progress)
