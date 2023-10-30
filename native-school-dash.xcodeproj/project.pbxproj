@@ -1,0 +1,1021 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2305478329C2742100227F7A /* native_school_dashApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2305478229C2742100227F7A /* native_school_dashApp.swift */; };
+		2305478529C2742100227F7A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2305478429C2742100227F7A /* ContentView.swift */; };
+		2305478729C2742400227F7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2305478629C2742400227F7A /* Assets.xcassets */; };
+		2305478A29C2742400227F7A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2305478929C2742400227F7A /* Preview Assets.xcassets */; };
+		2305479429C2742500227F7A /* native_school_dashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2305479329C2742500227F7A /* native_school_dashTests.swift */; };
+		2305479E29C2742500227F7A /* native_school_dashUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2305479D29C2742500227F7A /* native_school_dashUITests.swift */; };
+		230547A029C2742500227F7A /* native_school_dashUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2305479F29C2742500227F7A /* native_school_dashUITestsLaunchTests.swift */; };
+		230547A629C2742500227F7A /* native-school-dash Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 230547A529C2742500227F7A /* native-school-dash Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		230547AB29C2742500227F7A /* native_school_dashApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230547AA29C2742500227F7A /* native_school_dashApp.swift */; };
+		230547AD29C2742500227F7A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230547AC29C2742500227F7A /* ContentView.swift */; };
+		230547AF29C2742700227F7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 230547AE29C2742700227F7A /* Assets.xcassets */; };
+		230547B229C2742700227F7A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 230547B129C2742700227F7A /* Preview Assets.xcassets */; };
+		230547BC29C2742800227F7A /* native_school_dash_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230547BB29C2742800227F7A /* native_school_dash_Watch_AppTests.swift */; };
+		230547C629C2742800227F7A /* native_school_dash_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230547C529C2742800227F7A /* native_school_dash_Watch_AppUITests.swift */; };
+		230547C829C2742800227F7A /* native_school_dash_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230547C729C2742800227F7A /* native_school_dash_Watch_AppUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2305479029C2742500227F7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2305477729C2742100227F7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2305477E29C2742100227F7A;
+			remoteInfo = "native-school-dash";
+		};
+		2305479A29C2742500227F7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2305477729C2742100227F7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2305477E29C2742100227F7A;
+			remoteInfo = "native-school-dash";
+		};
+		230547A729C2742500227F7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2305477729C2742100227F7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 230547A429C2742500227F7A;
+			remoteInfo = "native-school-dash Watch App";
+		};
+		230547B829C2742800227F7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2305477729C2742100227F7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 230547A429C2742500227F7A;
+			remoteInfo = "native-school-dash Watch App";
+		};
+		230547C229C2742800227F7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2305477729C2742100227F7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 230547A429C2742500227F7A;
+			remoteInfo = "native-school-dash Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		230547CE29C2742800227F7A /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				230547A629C2742500227F7A /* native-school-dash Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2305477F29C2742100227F7A /* native-school-dash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "native-school-dash.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2305478229C2742100227F7A /* native_school_dashApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = native_school_dashApp.swift; sourceTree = "<group>"; };
+		2305478429C2742100227F7A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2305478629C2742400227F7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2305478929C2742400227F7A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2305478F29C2742500227F7A /* native-school-dashTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "native-school-dashTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2305479329C2742500227F7A /* native_school_dashTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = native_school_dashTests.swift; sourceTree = "<group>"; };
+		2305479929C2742500227F7A /* native-school-dashUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "native-school-dashUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2305479D29C2742500227F7A /* native_school_dashUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = native_school_dashUITests.swift; sourceTree = "<group>"; };
+		2305479F29C2742500227F7A /* native_school_dashUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = native_school_dashUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		230547A529C2742500227F7A /* native-school-dash Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "native-school-dash Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		230547AA29C2742500227F7A /* native_school_dashApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = native_school_dashApp.swift; sourceTree = "<group>"; };
+		230547AC29C2742500227F7A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		230547AE29C2742700227F7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		230547B129C2742700227F7A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		230547B729C2742800227F7A /* native-school-dash Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "native-school-dash Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		230547BB29C2742800227F7A /* native_school_dash_Watch_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = native_school_dash_Watch_AppTests.swift; sourceTree = "<group>"; };
+		230547C129C2742800227F7A /* native-school-dash Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "native-school-dash Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		230547C529C2742800227F7A /* native_school_dash_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = native_school_dash_Watch_AppUITests.swift; sourceTree = "<group>"; };
+		230547C729C2742800227F7A /* native_school_dash_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = native_school_dash_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2305477C29C2742100227F7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2305478C29C2742500227F7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2305479629C2742500227F7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		230547A229C2742500227F7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		230547B429C2742800227F7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		230547BE29C2742800227F7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2305477629C2742100227F7A = {
+			isa = PBXGroup;
+			children = (
+				2305478129C2742100227F7A /* native-school-dash */,
+				2305479229C2742500227F7A /* native-school-dashTests */,
+				2305479C29C2742500227F7A /* native-school-dashUITests */,
+				230547A929C2742500227F7A /* native-school-dash Watch App */,
+				230547BA29C2742800227F7A /* native-school-dash Watch AppTests */,
+				230547C429C2742800227F7A /* native-school-dash Watch AppUITests */,
+				2305478029C2742100227F7A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2305478029C2742100227F7A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2305477F29C2742100227F7A /* native-school-dash.app */,
+				2305478F29C2742500227F7A /* native-school-dashTests.xctest */,
+				2305479929C2742500227F7A /* native-school-dashUITests.xctest */,
+				230547A529C2742500227F7A /* native-school-dash Watch App.app */,
+				230547B729C2742800227F7A /* native-school-dash Watch AppTests.xctest */,
+				230547C129C2742800227F7A /* native-school-dash Watch AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2305478129C2742100227F7A /* native-school-dash */ = {
+			isa = PBXGroup;
+			children = (
+				2305478229C2742100227F7A /* native_school_dashApp.swift */,
+				2305478429C2742100227F7A /* ContentView.swift */,
+				2305478629C2742400227F7A /* Assets.xcassets */,
+				2305478829C2742400227F7A /* Preview Content */,
+			);
+			path = "native-school-dash";
+			sourceTree = "<group>";
+		};
+		2305478829C2742400227F7A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2305478929C2742400227F7A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2305479229C2742500227F7A /* native-school-dashTests */ = {
+			isa = PBXGroup;
+			children = (
+				2305479329C2742500227F7A /* native_school_dashTests.swift */,
+			);
+			path = "native-school-dashTests";
+			sourceTree = "<group>";
+		};
+		2305479C29C2742500227F7A /* native-school-dashUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2305479D29C2742500227F7A /* native_school_dashUITests.swift */,
+				2305479F29C2742500227F7A /* native_school_dashUITestsLaunchTests.swift */,
+			);
+			path = "native-school-dashUITests";
+			sourceTree = "<group>";
+		};
+		230547A929C2742500227F7A /* native-school-dash Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				230547AA29C2742500227F7A /* native_school_dashApp.swift */,
+				230547AC29C2742500227F7A /* ContentView.swift */,
+				230547AE29C2742700227F7A /* Assets.xcassets */,
+				230547B029C2742700227F7A /* Preview Content */,
+			);
+			path = "native-school-dash Watch App";
+			sourceTree = "<group>";
+		};
+		230547B029C2742700227F7A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				230547B129C2742700227F7A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		230547BA29C2742800227F7A /* native-school-dash Watch AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				230547BB29C2742800227F7A /* native_school_dash_Watch_AppTests.swift */,
+			);
+			path = "native-school-dash Watch AppTests";
+			sourceTree = "<group>";
+		};
+		230547C429C2742800227F7A /* native-school-dash Watch AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				230547C529C2742800227F7A /* native_school_dash_Watch_AppUITests.swift */,
+				230547C729C2742800227F7A /* native_school_dash_Watch_AppUITestsLaunchTests.swift */,
+			);
+			path = "native-school-dash Watch AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2305477E29C2742100227F7A /* native-school-dash */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 230547CF29C2742800227F7A /* Build configuration list for PBXNativeTarget "native-school-dash" */;
+			buildPhases = (
+				2305477B29C2742100227F7A /* Sources */,
+				2305477C29C2742100227F7A /* Frameworks */,
+				2305477D29C2742100227F7A /* Resources */,
+				230547CE29C2742800227F7A /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				230547A829C2742500227F7A /* PBXTargetDependency */,
+			);
+			name = "native-school-dash";
+			productName = "native-school-dash";
+			productReference = 2305477F29C2742100227F7A /* native-school-dash.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2305478E29C2742500227F7A /* native-school-dashTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 230547D229C2742800227F7A /* Build configuration list for PBXNativeTarget "native-school-dashTests" */;
+			buildPhases = (
+				2305478B29C2742500227F7A /* Sources */,
+				2305478C29C2742500227F7A /* Frameworks */,
+				2305478D29C2742500227F7A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2305479129C2742500227F7A /* PBXTargetDependency */,
+			);
+			name = "native-school-dashTests";
+			productName = "native-school-dashTests";
+			productReference = 2305478F29C2742500227F7A /* native-school-dashTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2305479829C2742500227F7A /* native-school-dashUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 230547D529C2742800227F7A /* Build configuration list for PBXNativeTarget "native-school-dashUITests" */;
+			buildPhases = (
+				2305479529C2742500227F7A /* Sources */,
+				2305479629C2742500227F7A /* Frameworks */,
+				2305479729C2742500227F7A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2305479B29C2742500227F7A /* PBXTargetDependency */,
+			);
+			name = "native-school-dashUITests";
+			productName = "native-school-dashUITests";
+			productReference = 2305479929C2742500227F7A /* native-school-dashUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		230547A429C2742500227F7A /* native-school-dash Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 230547CB29C2742800227F7A /* Build configuration list for PBXNativeTarget "native-school-dash Watch App" */;
+			buildPhases = (
+				230547A129C2742500227F7A /* Sources */,
+				230547A229C2742500227F7A /* Frameworks */,
+				230547A329C2742500227F7A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "native-school-dash Watch App";
+			productName = "native-school-dash Watch App";
+			productReference = 230547A529C2742500227F7A /* native-school-dash Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		230547B629C2742800227F7A /* native-school-dash Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 230547D829C2742800227F7A /* Build configuration list for PBXNativeTarget "native-school-dash Watch AppTests" */;
+			buildPhases = (
+				230547B329C2742800227F7A /* Sources */,
+				230547B429C2742800227F7A /* Frameworks */,
+				230547B529C2742800227F7A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				230547B929C2742800227F7A /* PBXTargetDependency */,
+			);
+			name = "native-school-dash Watch AppTests";
+			productName = "native-school-dash Watch AppTests";
+			productReference = 230547B729C2742800227F7A /* native-school-dash Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		230547C029C2742800227F7A /* native-school-dash Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 230547DB29C2742800227F7A /* Build configuration list for PBXNativeTarget "native-school-dash Watch AppUITests" */;
+			buildPhases = (
+				230547BD29C2742800227F7A /* Sources */,
+				230547BE29C2742800227F7A /* Frameworks */,
+				230547BF29C2742800227F7A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				230547C329C2742800227F7A /* PBXTargetDependency */,
+			);
+			name = "native-school-dash Watch AppUITests";
+			productName = "native-school-dash Watch AppUITests";
+			productReference = 230547C129C2742800227F7A /* native-school-dash Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2305477729C2742100227F7A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					2305477E29C2742100227F7A = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					2305478E29C2742500227F7A = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 2305477E29C2742100227F7A;
+					};
+					2305479829C2742500227F7A = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 2305477E29C2742100227F7A;
+					};
+					230547A429C2742500227F7A = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					230547B629C2742800227F7A = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 230547A429C2742500227F7A;
+					};
+					230547C029C2742800227F7A = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 230547A429C2742500227F7A;
+					};
+				};
+			};
+			buildConfigurationList = 2305477A29C2742100227F7A /* Build configuration list for PBXProject "native-school-dash" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2305477629C2742100227F7A;
+			productRefGroup = 2305478029C2742100227F7A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2305477E29C2742100227F7A /* native-school-dash */,
+				2305478E29C2742500227F7A /* native-school-dashTests */,
+				2305479829C2742500227F7A /* native-school-dashUITests */,
+				230547A429C2742500227F7A /* native-school-dash Watch App */,
+				230547B629C2742800227F7A /* native-school-dash Watch AppTests */,
+				230547C029C2742800227F7A /* native-school-dash Watch AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2305477D29C2742100227F7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2305478A29C2742400227F7A /* Preview Assets.xcassets in Resources */,
+				2305478729C2742400227F7A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2305478D29C2742500227F7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2305479729C2742500227F7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		230547A329C2742500227F7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				230547B229C2742700227F7A /* Preview Assets.xcassets in Resources */,
+				230547AF29C2742700227F7A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		230547B529C2742800227F7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		230547BF29C2742800227F7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2305477B29C2742100227F7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2305478529C2742100227F7A /* ContentView.swift in Sources */,
+				2305478329C2742100227F7A /* native_school_dashApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2305478B29C2742500227F7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2305479429C2742500227F7A /* native_school_dashTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2305479529C2742500227F7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2305479E29C2742500227F7A /* native_school_dashUITests.swift in Sources */,
+				230547A029C2742500227F7A /* native_school_dashUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		230547A129C2742500227F7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				230547AD29C2742500227F7A /* ContentView.swift in Sources */,
+				230547AB29C2742500227F7A /* native_school_dashApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		230547B329C2742800227F7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				230547BC29C2742800227F7A /* native_school_dash_Watch_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		230547BD29C2742800227F7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				230547C629C2742800227F7A /* native_school_dash_Watch_AppUITests.swift in Sources */,
+				230547C829C2742800227F7A /* native_school_dash_Watch_AppUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2305479129C2742500227F7A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2305477E29C2742100227F7A /* native-school-dash */;
+			targetProxy = 2305479029C2742500227F7A /* PBXContainerItemProxy */;
+		};
+		2305479B29C2742500227F7A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2305477E29C2742100227F7A /* native-school-dash */;
+			targetProxy = 2305479A29C2742500227F7A /* PBXContainerItemProxy */;
+		};
+		230547A829C2742500227F7A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 230547A429C2742500227F7A /* native-school-dash Watch App */;
+			targetProxy = 230547A729C2742500227F7A /* PBXContainerItemProxy */;
+		};
+		230547B929C2742800227F7A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 230547A429C2742500227F7A /* native-school-dash Watch App */;
+			targetProxy = 230547B829C2742800227F7A /* PBXContainerItemProxy */;
+		};
+		230547C329C2742800227F7A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 230547A429C2742500227F7A /* native-school-dash Watch App */;
+			targetProxy = 230547C229C2742800227F7A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		230547C929C2742800227F7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		230547CA29C2742800227F7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		230547CC29C2742800227F7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"native-school-dash Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = K5273GVYFN;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "native-school-dash";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.dharr.native-school-dash";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dharr.native-school-dash.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		230547CD29C2742800227F7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"native-school-dash Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = K5273GVYFN;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "native-school-dash";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.dharr.native-school-dash";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dharr.native-school-dash.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
+		230547D029C2742800227F7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"native-school-dash/Preview Content\"";
+				DEVELOPMENT_TEAM = K5273GVYFN;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "native-school-dash";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dharr.native-school-dash";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		230547D129C2742800227F7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"native-school-dash/Preview Content\"";
+				DEVELOPMENT_TEAM = K5273GVYFN;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "native-school-dash";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dharr.native-school-dash";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		230547D329C2742800227F7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K5273GVYFN;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dharr.native-school-dashTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/native-school-dash.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/native-school-dash";
+			};
+			name = Debug;
+		};
+		230547D429C2742800227F7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K5273GVYFN;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dharr.native-school-dashTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/native-school-dash.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/native-school-dash";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		230547D629C2742800227F7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K5273GVYFN;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dharr.native-school-dashUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "native-school-dash";
+			};
+			name = Debug;
+		};
+		230547D729C2742800227F7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K5273GVYFN;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dharr.native-school-dashUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "native-school-dash";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		230547D929C2742800227F7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K5273GVYFN;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dharr.native-school-dash-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/native-school-dash Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/native-school-dash Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		230547DA29C2742800227F7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K5273GVYFN;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dharr.native-school-dash-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/native-school-dash Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/native-school-dash Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
+		230547DC29C2742800227F7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K5273GVYFN;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dharr.native-school-dash-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "native-school-dash Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		230547DD29C2742800227F7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K5273GVYFN;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dharr.native-school-dash-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "native-school-dash Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2305477A29C2742100227F7A /* Build configuration list for PBXProject "native-school-dash" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				230547C929C2742800227F7A /* Debug */,
+				230547CA29C2742800227F7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		230547CB29C2742800227F7A /* Build configuration list for PBXNativeTarget "native-school-dash Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				230547CC29C2742800227F7A /* Debug */,
+				230547CD29C2742800227F7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		230547CF29C2742800227F7A /* Build configuration list for PBXNativeTarget "native-school-dash" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				230547D029C2742800227F7A /* Debug */,
+				230547D129C2742800227F7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		230547D229C2742800227F7A /* Build configuration list for PBXNativeTarget "native-school-dashTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				230547D329C2742800227F7A /* Debug */,
+				230547D429C2742800227F7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		230547D529C2742800227F7A /* Build configuration list for PBXNativeTarget "native-school-dashUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				230547D629C2742800227F7A /* Debug */,
+				230547D729C2742800227F7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		230547D829C2742800227F7A /* Build configuration list for PBXNativeTarget "native-school-dash Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				230547D929C2742800227F7A /* Debug */,
+				230547DA29C2742800227F7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		230547DB29C2742800227F7A /* Build configuration list for PBXNativeTarget "native-school-dash Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				230547DC29C2742800227F7A /* Debug */,
+				230547DD29C2742800227F7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2305477729C2742100227F7A /* Project object */;
+}
