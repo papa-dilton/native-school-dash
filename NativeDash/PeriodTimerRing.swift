@@ -7,22 +7,6 @@
 
 import SwiftUI
 
-
-extension Color {
-    public static var emptyRingColorLight: Color {
-        return Color(red: 0.858, green: 0.909, blue: 0.937)
-    }
-    
-    public static var emptyRingColorDark: Color {
-        return Color(red:0.1, green: 0.11, blue: 0.12)
-    }
-
-    public static var fillColor: Color {
-        return Color(red: 0.309, green: 0.556, blue: 0.698)
-    }
-}
-
-
 struct PeriodTimerRing: View {
     @Binding var progress: CGFloat
     @Binding var timeLeftInPeriod: String
@@ -33,18 +17,12 @@ struct PeriodTimerRing: View {
     var body: some View {
         ZStack {
             Circle()
-                .stroke(
-                    colorScheme == .light ?
-                    Color.emptyRingColorLight
-                    :
-                        Color.emptyRingColorDark,
-                    lineWidth: 20
-                )
+                .stroke(Color("EmptyAccentColor"), style: StrokeStyle(lineWidth: 20))
             Circle()
                 .rotation(Angle(degrees:(-(360*progress)-90)))
                 .trim(from: 0, to: progress)
                 .stroke(
-                    Color.fillColor,
+                    Color("AccentColor"),
                     style: StrokeStyle(lineWidth: 20, lineCap: .round)
             )
             Text(timeLeftInPeriod)

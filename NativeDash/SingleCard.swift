@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct SingleCard: View {
-    @Binding var schedule: Dictionary<String, String>
-    @Binding var fillColor: Color
+    @State var schedule: Dictionary<String, String>
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 8)
-                .fill(fillColor)
+                .fill(Color("AccentColor"))
             Grid(
                 alignment: .leading,
                 horizontalSpacing: 10.0,
@@ -40,16 +39,16 @@ struct SingleCard: View {
         }
         .padding([.leading, .trailing], 40)
         .fixedSize(horizontal: true, vertical: true)
+        
     }
 }
 
 #Preview {
-    @State var previewSchedule: Dictionary<String, String> = [
+    var previewSchedule: Dictionary<String, String> = [
         "Period 1": "8:30 - 8:55",
         "Period 2": "9:00 - 9:25",
         "Period 3": "9:30 - 9:55",
     ]
-    @State var fillColor: Color = Color(red: 0.309, green: 0.556, blue: 0.698)
     
-    return SingleCard(schedule: $previewSchedule, fillColor: $fillColor)
+    return SingleCard(schedule: previewSchedule)
 }

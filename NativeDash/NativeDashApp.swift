@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct NativeDashApp: App {
     var timeLeftInPeriod: String = "34:01"
-    @State var schedules: [Dictionary<String, String>] = [
+    var schedules: [Dictionary<String, String>] = [
         [
             "Period 1": "8:30 - 8:55",
             "Period 2": "9:00 - 9:25",
@@ -25,7 +25,7 @@ struct NativeDashApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(timeLeftInPeriod: timeLeftInPeriod, schedules: $schedules)
+            ContentView(timeLeftInPeriod: timeLeftInPeriod, schedules: schedules)
         }
     }
     func getTime() -> String {
