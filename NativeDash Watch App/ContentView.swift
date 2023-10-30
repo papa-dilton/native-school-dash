@@ -8,14 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var timeLeftInPeriod: String = "34:01"
+    @State var progress: CGFloat = 0.8
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        PeriodTimerRing(progress: $progress, timeLeftInPeriod: $timeLeftInPeriod)
     }
 }
 
