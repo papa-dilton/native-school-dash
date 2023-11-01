@@ -10,10 +10,10 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @State private var progress: CGFloat = 0
-    var schedules: [Dictionary<String, String>]
+    @Binding var progress: CGFloat
+    var schedules: [ScheduleData]
     // Get the number of seconds left in the period
-    @State var timeLeftInPeriod = Duration.seconds(3000)
+    @Binding var timeLeftInPeriod: Duration
     // Start a timer that fires an event every second to change the period time
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -38,20 +38,20 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var timeLeftInPeriod: String = "9:32"
-    static var schedules: [Dictionary<String, String>] = [
-        [
-            "Period 1": "8:30 - 8:59",
-            "Period 2": "9:00 - 9:25",
-            "Period 3": "9:30 - 9:55",
-        ],
-        [
-            "Period 1": "10:30 - 10:55",
-            "Period 2": "11:00 - 11:25",
-            "Period 3": "11:30 - 11:55",
-        ]
+    static var timeLeftInPeriod = Duration.seconds(700)
+    static var progress: CGFloat = 0.6
+    static var schedules: [ScheduleData] = [
+        ScheduleData(
+            dayTitle: "Regular Schedule",
+            bellTimes: [
+                .init(periodTitle: "Assembly", start: "8:30", end: "8:45"),
+                .init(periodTitle: "Period 1", start: "8:49", end: "9:32"),
+                .init(periodTitle: "Period 2", start: "9:35", end: "10:17"),
+                .init(periodTitle: "Period 3", start: "10:21", end: "11:03"),
+            ]
+        )
     ]
     static var previews: some View {
-        ContentView(schedules: schedules)
+        ContentView(progress: .constant(progress), schedules: schedules, timeLeftInPeriod: .constant(timeLeftInPeriod))
     }
 }

@@ -7,8 +7,9 @@
 
 import SwiftUI
 
+
 struct SingleCard: View {
-    @State var schedule: Dictionary<String, String>
+    @State var schedule: ScheduleData
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 8)
@@ -18,24 +19,24 @@ struct SingleCard: View {
                 horizontalSpacing: 10.0,
                 verticalSpacing: 10.0
             ) {
-                ForEach(schedule.sorted(by: <), id: \.key) { key, value in
+                ForEach(schedule.bellTimes, id: \.periodTitle) { period in
                     GridRow {
-                        Text(key)
+                        Text(period.periodTitle)
                             .multilineTextAlignment(.trailing)
-                            .lineLimit(1)
                             .gridColumnAlignment(.trailing)
                             .truncationMode(/*@START_MENU_TOKEN@*/.head/*@END_MENU_TOKEN@*/)
                         Spacer().frame(width: 15, height: 1)
-                        Text(value)
+                        Text("\(period.start) - \(period.end)")
                             .gridColumnAlignment(.leading)
-                            .lineLimit(1)
                             .truncationMode(/*@START_MENU_TOKEN@*/.head/*@END_MENU_TOKEN@*/)
+                            
                     }
                 }
             }
-            .padding(40)
+            .padding(30)
             .foregroundStyle(.white)
             .fontWeight(.bold)
+            .font(.headline)
         }
         .fixedSize(horizontal: false, vertical: true)
         
@@ -44,11 +45,17 @@ struct SingleCard: View {
 }
 
 #Preview {
-    var previewSchedule: Dictionary<String, String> = [
-        "Period 1": "8:30 - 8:55",
-        "Period 2": "9:00 - 9:25",
-        "Period 3": "9:30 - 9:55",
-    ]
+    var previewSchedule: ScheduleData =
+        ScheduleData(
+            dayTitle: "Regular Schedule",
+            bellTimes: [
+                .init(periodTitle: "Assembly", start: "8:30", end: "8:45"),
+                .init(periodTitle: "Period 1", start: "8:49", end: "9:32"),
+                .init(periodTitle: "Period 2", start: "9:35", end: "10:17"),
+                .init(periodTitle: "Period 3", start: "10:21", end: "11:03"),
+            ]
+        )
+    
     
     return SingleCard(schedule: previewSchedule)
 }
