@@ -9,9 +9,7 @@ import SwiftUI
 
 struct PeriodTimerRing: View {
     @Binding var progress: CGFloat
-    @Binding var timeLeftInPeriod: String
-
-    @Environment(\.colorScheme) var colorScheme
+    @Binding var timeLeftInPeriod: Duration
     
     
     var body: some View {
@@ -25,7 +23,7 @@ struct PeriodTimerRing: View {
                     Color("AccentColor"),
                     style: StrokeStyle(lineWidth: 20, lineCap: .round)
             )
-            Text(timeLeftInPeriod)
+            Text(timeLeftInPeriod.formatted(.time(pattern: .minuteSecond(padMinuteToLength: 0))))
                 .font(.largeTitle)
                 .fontWeight(.semibold)
         }.frame(idealWidth: 300, idealHeight: 300, alignment: .center)
@@ -34,6 +32,6 @@ struct PeriodTimerRing: View {
 
 #Preview {
     @State var progress: CGFloat = 0.8
-    @State var timeLeftInPeriod: String = "9:39"
+    @State var timeLeftInPeriod: Duration = Duration.seconds(633)
     return PeriodTimerRing(progress: $progress, timeLeftInPeriod: $timeLeftInPeriod)
 }

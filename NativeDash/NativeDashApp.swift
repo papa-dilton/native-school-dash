@@ -23,9 +23,10 @@ struct NativeDashApp: App {
         ]
     ]
     
+    
     var body: some Scene {
         WindowGroup {
-            ContentView(timeLeftInPeriod: timeLeftInPeriod, schedules: schedules)
+            ContentView(schedules: schedules)
         }
     }
     func getTime() -> String {

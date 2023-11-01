@@ -10,15 +10,12 @@ import SwiftUI
 struct ScheduleStack: View {
     var schedules: [Dictionary<String, String>]
     var body: some View {
-        ScrollView {
             VStack {
                 ForEach(schedules.indices, id: \.self) { index in
                     SingleCard(schedule: schedules[index])
+                        .padding(.horizontal, 0)
                 }
             }
-            .padding([.leading, .trailing], 10)
-            .fixedSize(horizontal: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-        }
     }
 }
 

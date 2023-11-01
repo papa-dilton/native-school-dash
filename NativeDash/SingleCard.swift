@@ -37,8 +37,8 @@ struct SingleCard: View {
             .foregroundStyle(.white)
             .fontWeight(.bold)
         }
-        .padding([.leading, .trailing], 40)
-        .fixedSize(horizontal: true, vertical: true)
+        .fixedSize(horizontal: false, vertical: true)
+        
         
     }
 }

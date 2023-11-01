@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var timeLeftInPeriod: String = "34:01"
+    @State var timeLeftInPeriod = Duration.seconds(633)
     @State var progress: CGFloat = 0.8
     var body: some View {
         PeriodTimerRing(progress: $progress, timeLeftInPeriod: $timeLeftInPeriod)
