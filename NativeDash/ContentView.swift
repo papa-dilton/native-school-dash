@@ -14,20 +14,11 @@ struct ContentView: View {
     var schedules: [ScheduleData]
     // Get the number of seconds left in the period
     @Binding var timeLeftInPeriod: Duration
-    // Start a timer that fires an event every second to change the period time
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
             ScrollView(.vertical, showsIndicators: false) {
                     Spacer().frame(height: 50)
                     PeriodTimerRing(progress: $progress, timeLeftInPeriod: $timeLeftInPeriod)
-                // Recieve the timer event and re-render affected elements
-                .onReceive(timer, perform: { time in
-                    // If seconds remaining is more than 0, subtract one second
-                    if timeLeftInPeriod.components.seconds > 0 {
-                        timeLeftInPeriod -= .seconds(1)
-                    }
-                })
                     Spacer().frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
                     ScheduleStack(schedules: schedules)
                     .padding(.horizontal, 40)

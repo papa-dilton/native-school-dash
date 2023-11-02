@@ -14,6 +14,7 @@ struct ScheduleStack: View {
                 ForEach(schedules.indices, id: \.self) { index in
                     SingleCard(schedule: schedules[index])
                         .padding(.horizontal, 0)
+                    Spacer().frame(height: 15)
                 }
             }
     }

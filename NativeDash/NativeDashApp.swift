@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct NativeDashApp: App {
-    @State var timeLeftInPeriod = Duration.seconds(700)
+    @State var timeLeftInPeriod = Duration.seconds(0)
     @State var progress: CGFloat = 0.6
     var schedules: [ScheduleData] = [
         ScheduleData(
@@ -78,18 +78,51 @@ struct NativeDashApp: App {
             ]
         )
     ]
-
     
-    
+    // Start a timer that fires an event every second to change the period time
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     var body: some Scene {
         WindowGroup {
             ContentView(progress: $progress, schedules: schedules, timeLeftInPeriod: $timeLeftInPeriod)
+            // Recieve the timer event and re-render affected elements
+            .onReceive(timer, perform: { time in
+                // If seconds remaining is more than 0, subtract one second
+                if timeLeftInPeriod.components.seconds > 0 {
+                    timeLeftInPeriod -= .seconds(1)
+                }
+                else {
+                    timeLeftInPeriod = Duration.seconds(getSecondsToNextPeriod(schedule: schedules[1]))
+                }
+            })
         }
     }
 
+    
+    func getSecondsToNextPeriod(schedule: ScheduleData) -> Int {
+        var nextPeriodEndTime = "00:00:00"
+        let date = Date()
+        let formatter = DateFormatter()
+        // We need to be able to make a date object setting the end of the period as the time, so we need to get the current date and re-input it in the date constructor
+        formatter.dateFormat = "yyyy/MM/dd ZZZZ"
+        let yearMonthDay = formatter.string(from: date)
+        formatter.dateFormat = "yyyy/MM/dd ZZZZ HH:mm:ss"
+        
+        for period in schedule.bellTimes {
+            // If period start is in future
+            if formatter.date(from: "\(yearMonthDay) \(period.start):00")!.timeIntervalSinceNow > 0 {
+                nextPeriodEndTime = period.start + ":00"
+                break
+            } // If period end is in future
+            else if formatter.date(from: "\(yearMonthDay) \(period.end):00")!.timeIntervalSinceNow > 0 {
+                nextPeriodEndTime = period.end + ":00"
+                break
+            }
+        }
+    
+        let endOfPeriod = formatter.date(from: "\(yearMonthDay) \(nextPeriodEndTime)")
+        let diff = endOfPeriod!.timeIntervalSinceNow
+        return Int(diff)
+    }
 }
 
 
-func getSecondsToNextPeriod(schedule: ScheduleData) -> Int {
-    return 0
-}
