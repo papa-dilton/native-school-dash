@@ -16,4 +16,5 @@ public struct ScheduleData {
         var start: String
         var end: String
     }
+    
 }

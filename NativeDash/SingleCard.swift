@@ -14,29 +14,33 @@ struct SingleCard: View {
         ZStack {
             RoundedRectangle(cornerRadius: 8)
                 .fill(Color("AccentColor"))
-            Grid(
-                alignment: .leading,
-                horizontalSpacing: 10.0,
-                verticalSpacing: 10.0
-            ) {
-                ForEach(schedule.bellTimes, id: \.periodTitle) { period in
-                    GridRow {
-                        Text(period.periodTitle)
-                            .multilineTextAlignment(.trailing)
-                            .gridColumnAlignment(.trailing)
-                            .truncationMode(/*@START_MENU_TOKEN@*/.head/*@END_MENU_TOKEN@*/)
-                        Spacer().frame(width: 15, height: 1)
-                        Text("\(period.start) - \(period.end)")
-                            .gridColumnAlignment(.leading)
-                            .truncationMode(/*@START_MENU_TOKEN@*/.head/*@END_MENU_TOKEN@*/)
-                            
+            VStack {
+                Text(schedule.dayTitle)
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .multilineTextAlignment(.center)
+                Spacer().frame(height: 15)
+                Grid(
+                    alignment: .leading,
+                    horizontalSpacing: 10.0,
+                    verticalSpacing: 10.0
+                ) {
+                    ForEach(schedule.bellTimes, id: \.periodTitle) { period in
+                        GridRow {
+                            Text(period.periodTitle)
+                                .multilineTextAlignment(.trailing)
+                                .gridColumnAlignment(.trailing)
+                            Spacer().frame(width: 15, height: 1)
+                            Text("\(period.start) - \(period.end)")
+                                .gridColumnAlignment(.leading)
+                        }
                     }
                 }
+                .truncationMode(/*@START_MENU_TOKEN@*/.head/*@END_MENU_TOKEN@*/)
+                .font(.body)
             }
             .padding(30)
-            .foregroundStyle(.white)
             .fontWeight(.bold)
-            .font(.headline)
+            .foregroundStyle(.white)
         }
         .fixedSize(horizontal: false, vertical: true)
         
