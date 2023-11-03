@@ -8,13 +8,11 @@
 import Foundation
 public struct ScheduleData {
     let dayTitle: String
-    let bellTimes: [BellTimes]
-    
-    
-    struct BellTimes {
-        var periodTitle: String
-        var start: String
-        var end: String
-    }
-    
+    let bellTimes: [Period]
+}
+
+struct Period {
+    var periodTitle: String
+    var start: String
+    var end: String
 }

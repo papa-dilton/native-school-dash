@@ -11,6 +11,7 @@ import SwiftUI
 struct NativeDashApp: App {
     @State var timeLeftInPeriod = Duration.seconds(0)
     @State var progress: CGFloat = 0.6
+    var progressStep: CGFloat = 0
     var schedules: [ScheduleData] = [
         ScheduleData(
             dayTitle: "Regular Schedule",
@@ -84,22 +85,38 @@ struct NativeDashApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView(progress: $progress, schedules: schedules, timeLeftInPeriod: $timeLeftInPeriod)
+            
             // Recieve the timer event and re-render affected elements
             .onReceive(timer, perform: { time in
                 // If seconds remaining is more than 0, subtract one second
                 if timeLeftInPeriod.components.seconds > 0 {
                     timeLeftInPeriod -= .seconds(1)
+                    
+                    // Change Progress value to reflect percentage of period elapsed
+                    let currentPeriod = getNextPeriod(schedule: schedules[1])
+                    let secondsToEnd = getSecondsToPeriodStartEnd(period: currentPeriod, isEnd: true)
+                    let secondsToStart = getSecondsToPeriodStartEnd(period: currentPeriod, isEnd: false)
+                    progress = CGFloat(secondsToStart) / CGFloat(secondsToEnd + secondsToStart)
                 }
                 else {
-                    timeLeftInPeriod = Duration.seconds(getSecondsToNextPeriod(schedule: schedules[1]))
+                    timeLeftInPeriod = Duration.seconds(getSecondsToPeriodStartEnd(period: getNextPeriod(schedule: schedules[1]), isEnd: true))
                 }
             })
         }
     }
-
     
-    func getSecondsToNextPeriod(schedule: ScheduleData) -> Int {
-        var nextPeriodEndTime = "00:00:00"
+    func applicationWillEnterForeground() {
+        timeLeftInPeriod -= .seconds(1)
+        
+        // Change Progress value to reflect percentage of period elapsed
+        let currentPeriod = getNextPeriod(schedule: schedules[1])
+        let secondsToEnd = getSecondsToPeriodStartEnd(period: currentPeriod, isEnd: true)
+        let secondsToStart = getSecondsToPeriodStartEnd(period: currentPeriod, isEnd: false)
+        progress = CGFloat(secondsToStart) / CGFloat(secondsToEnd + secondsToStart)
+    }
+
+    func getNextPeriod(schedule: ScheduleData) -> Period {
+        var periodToReturn: Period?
         let date = Date()
         let formatter = DateFormatter()
         // We need to be able to make a date object setting the end of the period as the time, so we need to get the current date and re-input it in the date constructor
@@ -107,22 +124,34 @@ struct NativeDashApp: App {
         let yearMonthDay = formatter.string(from: date)
         formatter.dateFormat = "yyyy/MM/dd ZZZZ HH:mm:ss"
         
-        for period in schedule.bellTimes {
-            // If period start is in future
+        for (index, period) in schedule.bellTimes.enumerated() {
+            // If period start is in future (Currently in a passing period)
             if formatter.date(from: "\(yearMonthDay) \(period.start):00")!.timeIntervalSinceNow > 0 {
-                nextPeriodEndTime = period.start + ":00"
+                periodToReturn = Period(periodTitle: "\(period.periodTitle) → \(schedule.bellTimes[index-1].periodTitle)", start: schedule.bellTimes[index-1].end, end: period.start)
                 break
-            } // If period end is in future
+            } // If period end is in future (Currently in a period)
             else if formatter.date(from: "\(yearMonthDay) \(period.end):00")!.timeIntervalSinceNow > 0 {
-                nextPeriodEndTime = period.end + ":00"
+                periodToReturn = period
                 break
             }
         }
+        return periodToReturn ?? Period(periodTitle: "Period not found", start: "00:00", end: "00:00")
+    }
     
+    // Get the number of seconds to the start or end of current period. Time must be between given period start or end
+    // If isEnd = true, will return time to end, else will return time to start
+    func getSecondsToPeriodStartEnd(period: Period, isEnd: Bool) -> Int {
+        let nextPeriodEndTime = (isEnd ? period.end : period.start) + ":00"
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd ZZZZ"
+        let yearMonthDay = formatter.string(from: date)
+        formatter.dateFormat = "yyyy/MM/dd ZZZZ HH:mm:ss"
         let endOfPeriod = formatter.date(from: "\(yearMonthDay) \(nextPeriodEndTime)")
-        let diff = endOfPeriod!.timeIntervalSinceNow
+        let diff = abs(endOfPeriod!.timeIntervalSinceNow)
         return Int(diff)
     }
+    
 }
 
 
