@@ -14,23 +14,31 @@ struct ContentView: View {
     var schedules: [ScheduleData]
     // Get the number of seconds left in the period
     @Binding var timeLeftInPeriod: Duration
+    @Binding var displayPeriod: Period
+    @Binding var periodRingShouldDisplay: Bool
     
     var body: some View {
             ScrollView(.vertical, showsIndicators: false) {
                     Spacer().frame(height: 50)
+                if periodRingShouldDisplay {
                     PeriodTimerRing(progress: $progress, timeLeftInPeriod: $timeLeftInPeriod)
-                    Spacer().frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+                    Spacer().frame(height: 50)
+                    Text(displayPeriod.periodTitle)
+                        .font(.title)
+                        .fontWeight(.bold)
+                    Spacer().frame(height: 50)
+                }
                     ScheduleStack(schedules: schedules)
                     .padding(.horizontal, 40)
             }
             
-        
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var timeLeftInPeriod = Duration.seconds(700)
     static var progress: CGFloat = 0.6
+    static var displayPeriod = Period(periodTitle: "Preview Period", start: "2:32", end: "3:21")
     static var schedules: [ScheduleData] = [
         ScheduleData(
             dayTitle: "Regular Schedule",
@@ -43,6 +51,7 @@ struct ContentView_Previews: PreviewProvider {
         )
     ]
     static var previews: some View {
-        ContentView(progress: .constant(progress), schedules: schedules, timeLeftInPeriod: .constant(timeLeftInPeriod))
+        ContentView(progress: .constant(progress), schedules: schedules, timeLeftInPeriod: .constant(timeLeftInPeriod), displayPeriod: .constant(displayPeriod), periodRingShouldDisplay: .constant(true)
+        )
     }
 }

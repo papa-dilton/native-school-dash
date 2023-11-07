@@ -11,6 +11,9 @@ import SwiftUI
 struct NativeDashApp: App {
     @State var timeLeftInPeriod = Duration.seconds(0)
     @State var progress: CGFloat = 0.6
+    @State var displayPeriod: Period = Period(periodTitle: "Init period", start: "00:00", end: "00:00")
+    @State var periodRingShouldDisplay: Bool = false
+    
     var progressStep: CGFloat = 0
     var schedules: [ScheduleData] = [
         ScheduleData(
@@ -84,19 +87,14 @@ struct NativeDashApp: App {
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     var body: some Scene {
         WindowGroup {
-            ContentView(progress: $progress, schedules: schedules, timeLeftInPeriod: $timeLeftInPeriod)
+            ContentView(progress: $progress, schedules: schedules, timeLeftInPeriod: $timeLeftInPeriod, displayPeriod: $displayPeriod, periodRingShouldDisplay: $periodRingShouldDisplay)
             
             // Recieve the timer event and re-render affected elements
             .onReceive(timer, perform: { time in
                 // If seconds remaining is more than 0, subtract one second
                 if timeLeftInPeriod.components.seconds > 0 {
                     timeLeftInPeriod -= .seconds(1)
-                    
-                    // Change Progress value to reflect percentage of period elapsed
-                    let currentPeriod = getNextPeriod(schedule: schedules[1])
-                    let secondsToEnd = getSecondsToPeriodStartEnd(period: currentPeriod, isEnd: true)
-                    let secondsToStart = getSecondsToPeriodStartEnd(period: currentPeriod, isEnd: false)
-                    progress = CGFloat(secondsToStart) / CGFloat(secondsToEnd + secondsToStart)
+                    updateDisplayPeriodAndProgress()
                 }
                 else {
                     timeLeftInPeriod = Duration.seconds(getSecondsToPeriodStartEnd(period: getNextPeriod(schedule: schedules[1]), isEnd: true))
@@ -107,12 +105,7 @@ struct NativeDashApp: App {
     
     func applicationWillEnterForeground() {
         timeLeftInPeriod -= .seconds(1)
-        
-        // Change Progress value to reflect percentage of period elapsed
-        let currentPeriod = getNextPeriod(schedule: schedules[1])
-        let secondsToEnd = getSecondsToPeriodStartEnd(period: currentPeriod, isEnd: true)
-        let secondsToStart = getSecondsToPeriodStartEnd(period: currentPeriod, isEnd: false)
-        progress = CGFloat(secondsToStart) / CGFloat(secondsToEnd + secondsToStart)
+        updateDisplayPeriodAndProgress()
     }
 
     func getNextPeriod(schedule: ScheduleData) -> Period {
@@ -126,12 +119,30 @@ struct NativeDashApp: App {
         
         for (index, period) in schedule.bellTimes.enumerated() {
             // If period start is in future (Currently in a passing period)
-            if formatter.date(from: "\(yearMonthDay) \(period.start):00")!.timeIntervalSinceNow > 0 {
-                periodToReturn = Period(periodTitle: "\(period.periodTitle) → \(schedule.bellTimes[index-1].periodTitle)", start: schedule.bellTimes[index-1].end, end: period.start)
+            let timeSincePeriodStart = formatter.date(from: "\(yearMonthDay) \(period.start):00")!.timeIntervalSinceNow
+            let timeSincePeriodEnd = formatter.date(from: "\(yearMonthDay) \(period.end):00")!.timeIntervalSinceNow
+            
+            // If period start is in future (Currently in passing period)
+            if timeSincePeriodStart > 0 {
+                if index == 0 {
+                    // If before school, do not display period ring
+                    periodRingShouldDisplay = false
+                    break
+                }
+                periodToReturn = Period(periodTitle: "\(schedule.bellTimes[index-1].periodTitle) → \(period.periodTitle)", start: schedule.bellTimes[index-1].end, end: period.start)
+                periodRingShouldDisplay = true
                 break
             } // If period end is in future (Currently in a period)
-            else if formatter.date(from: "\(yearMonthDay) \(period.end):00")!.timeIntervalSinceNow > 0 {
+            else if timeSincePeriodEnd > 0 {
                 periodToReturn = period
+                periodRingShouldDisplay = true
+                break
+            }
+            
+            // If no period detected and loop is on last period in schedule, assume after-school hours
+            // and do not display period ring timer
+            if index+1 == schedule.bellTimes.count {
+                periodRingShouldDisplay = false
                 break
             }
         }
@@ -150,6 +161,14 @@ struct NativeDashApp: App {
         let endOfPeriod = formatter.date(from: "\(yearMonthDay) \(nextPeriodEndTime)")
         let diff = abs(endOfPeriod!.timeIntervalSinceNow)
         return Int(diff)
+    }
+    
+    func updateDisplayPeriodAndProgress() {
+        // Change Progress value to reflect percentage of period elapsed
+        displayPeriod = getNextPeriod(schedule: schedules[1])
+        let secondsToEnd = getSecondsToPeriodStartEnd(period: displayPeriod, isEnd: true)
+        let secondsToStart = getSecondsToPeriodStartEnd(period: displayPeriod, isEnd: false)
+        progress = CGFloat(secondsToStart) / CGFloat(secondsToEnd + secondsToStart)
     }
     
 }
