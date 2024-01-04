@@ -10,7 +10,7 @@
         <attribute name="start" attributeType="String"/>
         <relationship name="schedule" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StoredDayType" inverseName="periods" inverseEntity="StoredDayType"/>
     </entity>
-    <entity name="StoredScheduleOnDate" representedClassName="StoredScheduleOnDate" syncable="YES" codeGenerationType="class">
+    <entity name="StoredScheduleOnDate" representedClassName="StoredScheduleOnDate" syncable="YES">
         <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="schedule" maxCount="1" deletionRule="Nullify" destinationEntity="StoredDayType"/>
     </entity>

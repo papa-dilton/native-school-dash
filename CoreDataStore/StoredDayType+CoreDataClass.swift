@@ -31,7 +31,7 @@ public class StoredDayType: NSManagedObject {
     }
     
     func to12HourTime() -> DayType {
-        var newDayType = DayType(name: self.name ?? "Unknown period", periods: [])
+        var newDayType = DayType(name: self.wrappedName, periods: [])
         for period in self.periods?.array as! [Period] {
             let newStartHour = (Int(period.start.split(separator: ":")[0]) ?? 0) % 12
             let newEndHour = (Int(period.end.split(separator: ":")[0]) ?? 0) % 12

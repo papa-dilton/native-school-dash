@@ -20,33 +20,42 @@ struct PeriodTimerRing: View {
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
      
     var body: some View {
-        ZStack {
-            Circle()
-                .stroke(Color("EmptyAccentColor"), style: StrokeStyle(lineWidth: 20))
-            Circle()
-                .rotation(Angle(degrees:(-(360*progress)-90)))
-                .trim(from: 0, to: progress)
-                .stroke(
-                    Color("AccentColor"),
-                    style: StrokeStyle(lineWidth: 20, lineCap: .round)
-            )
-            Text(timeLeftInPeriod.formatted(.time(pattern: .minuteSecond(padMinuteToLength: 0))))
-                .fontWeight(.semibold)
-                .font(.title)
+        VStack {
+        if periodRingShouldDisplay {
+            ZStack{
+                Circle()
+                    .stroke(Color("EmptyAccentColor"), style: StrokeStyle(lineWidth: 20))
+                Circle()
+                    .rotation(Angle(degrees:(-(360*progress)-90)))
+                    .trim(from: 0, to: progress)
+                    .stroke(
+                        Color("AccentColor"),
+                        style: StrokeStyle(lineWidth: 20, lineCap: .round)
+                    )
+                Text(timeLeftInPeriod.formatted(.time(pattern: .minuteSecond(padMinuteToLength: 0))))
+                    .fontWeight(.semibold)
+                    .font(.title)
+            }
+                    .frame(idealWidth: 300, idealHeight: 300, alignment: .center)
+                Spacer().frame(height: 50)
+                Text(displayPeriod.name)
+                    .font(.title)
+                    .fontWeight(.bold)
+                Spacer().frame(height: 50)
+                
+            }
         }
-        .frame(idealWidth: 300, idealHeight: 300, alignment: .center) 
-            Spacer().frame(height: 50)
-            Text(displayPeriod.name)
-                .font(.title)
-                .fontWeight(.bold)
-            Spacer().frame(height: 50)
-
-        // Recieve the timer event and re-render affected elements
-        .onReceive(timer, perform: { time in
-            updateDisplayPeriodAndProgress()
-            timeLeftInPeriod = Duration.seconds(getSecondsToPeriodStartEnd(period: getNextPeriod(schedule: todaySchedule), isEnd: true))
-
-        })
+            // Recieve the timer event and re-render affected elements
+                .onReceive(timer, perform: { time in
+                    updateDisplayPeriodAndProgress()
+                    if let period = getNextPeriod(schedule: todaySchedule) {
+                        timeLeftInPeriod = Duration.seconds(getSecondsToPeriodStartEnd(period: period, isEnd: true))
+                    } else {
+                        timeLeftInPeriod = Duration.seconds(10)
+                        periodRingShouldDisplay = false
+                    }
+                })
+        
     }
     
     func applicationWillEnterForeground() {
@@ -56,7 +65,9 @@ struct PeriodTimerRing: View {
     
     func updateDisplayPeriodAndProgress() {
         // Change Progress value to reflect percentage of period elapsed
-        displayPeriod = getNextPeriod(schedule: todaySchedule)
+        if let period = getNextPeriod(schedule: todaySchedule) {
+            displayPeriod = period
+        }
         let secondsToEnd = getSecondsToPeriodStartEnd(period: displayPeriod, isEnd: true)
         let secondsToStart = getSecondsToPeriodStartEnd(period: displayPeriod, isEnd: false)
         progress = CGFloat(secondsToStart) / CGFloat(secondsToEnd + secondsToStart)
@@ -76,7 +87,7 @@ struct PeriodTimerRing: View {
         return Int(diff)
     }
     
-    func getNextPeriod(schedule: DayType) -> Period {
+    func getNextPeriod(schedule: DayType) -> Period? {
         var periodToReturn: Period?
         let date = Date()
         let formatter = DateFormatter()
@@ -114,7 +125,7 @@ struct PeriodTimerRing: View {
                 break
             }
         }
-        return periodToReturn ?? Period(name: "Period not found", start: "00:00", end: "00:00")
+        return periodToReturn
     }
 }
 

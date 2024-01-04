@@ -37,10 +37,10 @@ public struct Period: Decodable {
 }
 
 public struct ApiResponse: Decodable {
-    let dayTypeOnDate: DayType
-    let name: String
+    var dayTypeOnDate: DayType
+    var name: String
     let _id: String
-    let dayTypes: [DayType]
+    var dayTypes: [DayType]
 }
 
 public class YearMonthDay {
