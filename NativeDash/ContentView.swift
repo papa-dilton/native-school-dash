@@ -44,9 +44,15 @@ struct ContentView: View {
         
         // Load schedules from local stores while app launches
         .task {
+            
+            var unsortedSchedules: [DayType] = []
             for dayType in todayScheduleStore {
-                schedules.append(DayType(name: dayType.wrappedName, periods: dayType.periodsArray))
+                unsortedSchedules.append(DayType(name: dayType.wrappedName, periods: dayType.periodsArray))
             }
+            let topSchedule = unsortedSchedules.remove(at: unsortedSchedules.firstIndex(where: {$0.name == todaySchedule.name}) ?? 0)
+            unsortedSchedules.sort(by: {$0.name.first! < $1.name.first!})
+            unsortedSchedules.insert(topSchedule, at: 0)
+            schedules = unsortedSchedules
         }
 
         // Fetch schedule data from API to keep StoredDayType up to date
@@ -56,7 +62,11 @@ struct ContentView: View {
                 let fetchedSchedules = try await getDayTypeFromApi()
             
                 // Set UI State to new schedules
-                schedules = fetchedSchedules!.dayTypes
+                var unsortedSchedules = fetchedSchedules?.dayTypes ?? [DayType(name: "Fetch Failed", periods: [])]
+                let topSchedule = unsortedSchedules.remove(at: unsortedSchedules.firstIndex(where: {$0.name == todaySchedule.name}) ?? 0)
+                unsortedSchedules.sort(by: {$0.name.first! < $1.name.first!})
+                unsortedSchedules.insert(topSchedule, at: 0)
+                schedules = unsortedSchedules
                 
                 // Delete previous local stores
                 todayScheduleStore.forEach(viewContext.delete)
@@ -74,11 +84,11 @@ struct ContentView: View {
             } catch {
                 schedules = [DayType(name: "Schedule Fetch Error", periods: [])]
             }
-        }
+        
         
         // Fetch schedule data from API to keep StoredScheduleOnDate up to date
         // This makes it so that we can assume what schedule it is on any day in widgets and on app load
-        .task {
+        
             do {
                 var dates: [Date] = [Date.now]
                 for i in (1...6) {
