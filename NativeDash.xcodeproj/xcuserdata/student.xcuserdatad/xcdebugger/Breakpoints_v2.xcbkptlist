@@ -665,8 +665,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
             endingLineNumber = "68"
-            landmarkName = "updateDisplayPeriodAndProgress()"
-            landmarkType = "7">
+            landmarkName = "PeriodTimerRing"
+            landmarkType = "14">
             <Locations>
                <Location
                   uuid = "15B3B8AE-5867-4B91-808B-15310A7FF317 - 326ed8294a445b44"
@@ -902,8 +902,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "100"
             endingLineNumber = "100"
-            landmarkName = "body"
-            landmarkType = "24">
+            landmarkName = "getNextPeriod(schedule:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -922,7 +922,7 @@
             landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "65360BF2-9A80-4EFC-BF65-F0ACA2D25B1C - b9c7c01bca46fd70"
+                  uuid = "56925D6D-BA0C-42EE-9FDA-BA8363D0F0A1 - b9c7c01bca46fd70"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -937,7 +937,7 @@
                   offsetFromSymbolStart = "400">
                </Location>
                <Location
-                  uuid = "65360BF2-9A80-4EFC-BF65-F0ACA2D25B1C - e23636b508501c5"
+                  uuid = "56925D6D-BA0C-42EE-9FDA-BA8363D0F0A1 - e23636b508501c5"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -952,7 +952,7 @@
                   offsetFromSymbolStart = "48">
                </Location>
                <Location
-                  uuid = "65360BF2-9A80-4EFC-BF65-F0ACA2D25B1C - b9c7c01bca46fd70"
+                  uuid = "56925D6D-BA0C-42EE-9FDA-BA8363D0F0A1 - b9c7c01bca46fd70"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
