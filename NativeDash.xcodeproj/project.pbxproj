@@ -30,10 +30,20 @@
 		3FDA84462B479F5700D296C9 /* DashWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDA84452B479F5700D296C9 /* DashWidgets.swift */; };
 		3FDA84482B479F5900D296C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FDA84472B479F5900D296C9 /* Assets.xcassets */; };
 		3FDA844D2B479F5900D296C9 /* DashWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3FDA843C2B479F5700D296C9 /* DashWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		3FDB6AC92B456264005FBE27 /* StoredScheduleOnDate+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDB6AC72B456264005FBE27 /* StoredScheduleOnDate+CoreDataClass.swift */; };
-		3FDB6ACA2B456264005FBE27 /* StoredScheduleOnDate+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDB6AC72B456264005FBE27 /* StoredScheduleOnDate+CoreDataClass.swift */; };
-		3FDB6ACB2B456264005FBE27 /* StoredScheduleOnDate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDB6AC82B456264005FBE27 /* StoredScheduleOnDate+CoreDataProperties.swift */; };
-		3FDB6ACC2B456264005FBE27 /* StoredScheduleOnDate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDB6AC82B456264005FBE27 /* StoredScheduleOnDate+CoreDataProperties.swift */; };
+		3FDA84532B47AC8500D296C9 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDA84522B47AC8500D296C9 /* AppGroup.swift */; };
+		3FDA84542B47AC8500D296C9 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDA84522B47AC8500D296C9 /* AppGroup.swift */; };
+		3FDA84592B47B24B00D296C9 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDA84522B47AC8500D296C9 /* AppGroup.swift */; };
+		3FDA845A2B47B29600D296C9 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF726C72B0BB8950093E54C /* Persistence.swift */; };
+		3FDA845B2B47B2A400D296C9 /* StoredDayType+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF726CD2B0BF9130093E54C /* StoredDayType+CoreDataClass.swift */; };
+		3FDA845C2B47B2A700D296C9 /* StoredDayType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF726CE2B0BF9130093E54C /* StoredDayType+CoreDataProperties.swift */; };
+		3FDA845E2B47B2CA00D296C9 /* StoredPeriod+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF726CB2B0BF9130093E54C /* StoredPeriod+CoreDataClass.swift */; };
+		3FDA845F2B47B2CD00D296C9 /* StoredPeriod+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF726CC2B0BF9130093E54C /* StoredPeriod+CoreDataProperties.swift */; };
+		3FDA84602B47B2DC00D296C9 /* DataStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB335DB2AF302B100028FC8 /* DataStructs.swift */; };
+		3FDA84622B47B33C00D296C9 /* NativeDash.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3FF726C42B0BB8450093E54C /* NativeDash.xcdatamodeld */; };
+		3FDA84632B47B34A00D296C9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F09BC3B2AB2160D00924ACE /* ContentView.swift */; };
+		3FDA84642B47B35B00D296C9 /* PeriodTimerRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2F8BE42AEF4F3C00393F60 /* PeriodTimerRing.swift */; };
+		3FDA84652B47B36400D296C9 /* ScheduleStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2F8BE22AEF4EF700393F60 /* ScheduleStack.swift */; };
+		3FDA84662B47B36800D296C9 /* SingleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2F8BDF2AEC04F300393F60 /* SingleCard.swift */; };
 		3FF726C62B0BB8450093E54C /* NativeDash.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3FF726C42B0BB8450093E54C /* NativeDash.xcdatamodeld */; };
 		3FF726C82B0BB8950093E54C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF726C72B0BB8950093E54C /* Persistence.swift */; };
 		3FF726C92B0BDBCC0093E54C /* NativeDash.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3FF726C42B0BB8450093E54C /* NativeDash.xcdatamodeld */; };
@@ -116,8 +126,7 @@
 		3FDA84472B479F5900D296C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FDA84492B479F5900D296C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FDA844A2B479F5900D296C9 /* DashWidgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DashWidgets.entitlements; sourceTree = "<group>"; };
-		3FDB6AC72B456264005FBE27 /* StoredScheduleOnDate+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoredScheduleOnDate+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3FDB6AC82B456264005FBE27 /* StoredScheduleOnDate+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoredScheduleOnDate+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3FDA84522B47AC8500D296C9 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
 		3FF726C52B0BB8450093E54C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		3FF726C72B0BB8950093E54C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		3FF726CB2B0BF9130093E54C /* StoredPeriod+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoredPeriod+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -185,6 +194,7 @@
 				3F09BC392AB2160D00924ACE /* NativeDashApp.swift */,
 				3F09BC3B2AB2160D00924ACE /* ContentView.swift */,
 				3F2F8BE22AEF4EF700393F60 /* ScheduleStack.swift */,
+				3FDA84522B47AC8500D296C9 /* AppGroup.swift */,
 				3FB54FE12AEFFAC000623592 /* Launch Screen.storyboard */,
 				3F2F8BDF2AEC04F300393F60 /* SingleCard.swift */,
 				3F09BC3D2AB2160F00924ACE /* Assets.xcassets */,
@@ -250,8 +260,6 @@
 				3FF726CC2B0BF9130093E54C /* StoredPeriod+CoreDataProperties.swift */,
 				3FF726CD2B0BF9130093E54C /* StoredDayType+CoreDataClass.swift */,
 				3FF726CE2B0BF9130093E54C /* StoredDayType+CoreDataProperties.swift */,
-				3FDB6AC72B456264005FBE27 /* StoredScheduleOnDate+CoreDataClass.swift */,
-				3FDB6AC82B456264005FBE27 /* StoredScheduleOnDate+CoreDataProperties.swift */,
 			);
 			path = CoreDataStore;
 			sourceTree = "<group>";
@@ -394,15 +402,14 @@
 				3FF726C82B0BB8950093E54C /* Persistence.swift in Sources */,
 				3F2F8BE32AEF4EF700393F60 /* ScheduleStack.swift in Sources */,
 				3F2F8BE02AEC04F300393F60 /* SingleCard.swift in Sources */,
-				3FDB6ACB2B456264005FBE27 /* StoredScheduleOnDate+CoreDataProperties.swift in Sources */,
 				3FF726C62B0BB8450093E54C /* NativeDash.xcdatamodeld in Sources */,
 				3FF726D52B0BF9130093E54C /* StoredDayType+CoreDataProperties.swift in Sources */,
 				3F09BC3A2AB2160D00924ACE /* NativeDashApp.swift in Sources */,
 				3FF726D32B0BF9130093E54C /* StoredDayType+CoreDataClass.swift in Sources */,
 				3FB335DC2AF302B100028FC8 /* DataStructs.swift in Sources */,
+				3FDA84532B47AC8500D296C9 /* AppGroup.swift in Sources */,
 				3FF726D12B0BF9130093E54C /* StoredPeriod+CoreDataProperties.swift in Sources */,
 				3FF726CF2B0BF9130093E54C /* StoredPeriod+CoreDataClass.swift in Sources */,
-				3FDB6AC92B456264005FBE27 /* StoredScheduleOnDate+CoreDataClass.swift in Sources */,
 				3F2F8BE52AEF4F3C00393F60 /* PeriodTimerRing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,10 +418,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FDB6ACA2B456264005FBE27 /* StoredScheduleOnDate+CoreDataClass.swift in Sources */,
 				3F2F8BE62AEF4F3C00393F60 /* PeriodTimerRing.swift in Sources */,
 				3FF726D22B0BF9130093E54C /* StoredPeriod+CoreDataProperties.swift in Sources */,
-				3FDB6ACC2B456264005FBE27 /* StoredScheduleOnDate+CoreDataProperties.swift in Sources */,
+				3FDA84592B47B24B00D296C9 /* AppGroup.swift in Sources */,
 				3F09BC4E2AB2160F00924ACE /* ContentView.swift in Sources */,
 				3FF726C92B0BDBCC0093E54C /* NativeDash.xcdatamodeld in Sources */,
 				3FF726CA2B0BDBEB0093E54C /* Persistence.swift in Sources */,
@@ -432,7 +438,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FDA84442B479F5700D296C9 /* DashWidgetsBundle.swift in Sources */,
+				3FDA84632B47B34A00D296C9 /* ContentView.swift in Sources */,
+				3FDA845F2B47B2CD00D296C9 /* StoredPeriod+CoreDataProperties.swift in Sources */,
+				3FDA84652B47B36400D296C9 /* ScheduleStack.swift in Sources */,
+				3FDA84602B47B2DC00D296C9 /* DataStructs.swift in Sources */,
+				3FDA84642B47B35B00D296C9 /* PeriodTimerRing.swift in Sources */,
+				3FDA845B2B47B2A400D296C9 /* StoredDayType+CoreDataClass.swift in Sources */,
+				3FDA84542B47AC8500D296C9 /* AppGroup.swift in Sources */,
 				3FDA84462B479F5700D296C9 /* DashWidgets.swift in Sources */,
+				3FDA84622B47B33C00D296C9 /* NativeDash.xcdatamodeld in Sources */,
+				3FDA845A2B47B29600D296C9 /* Persistence.swift in Sources */,
+				3FDA845E2B47B2CA00D296C9 /* StoredPeriod+CoreDataClass.swift in Sources */,
+				3FDA845C2B47B2A700D296C9 /* StoredDayType+CoreDataProperties.swift in Sources */,
+				3FDA84662B47B36800D296C9 /* SingleCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

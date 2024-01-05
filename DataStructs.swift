@@ -82,3 +82,45 @@ public func getDayTypeFromApi(onDay: YearMonthDay? = nil) async throws -> ApiRes
     }
     return nil
 }
+
+// Get the number of seconds to the start or end of current period. Time must be between given period start or end
+// If isEnd = true, will return time to end, else will return time to start
+public func getSecondsToPeriodStartEnd(period: Period, isEnd: Bool) -> Int {
+    let nextPeriodEndTime = (isEnd ? period.end : period.start) + ":00"
+    let date = Date()
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy/MM/dd ZZZZ"
+    let yearMonthDay = formatter.string(from: date)
+    formatter.dateFormat = "yyyy/MM/dd ZZZZ HH:mm:ss"
+    let endOfPeriod = formatter.date(from: "\(yearMonthDay) \(nextPeriodEndTime)")
+    let diff = abs(endOfPeriod!.timeIntervalSinceNow)
+    return Int(diff)
+}
+
+public func getNextPeriod(date: Date, schedule: DayType) -> Period? {
+    let date = Date()
+    let formatter = DateFormatter()
+    // We need to be able to make a date object setting the end of the period as the time, so we need to get the current date and re-input it in the date constructor
+    formatter.dateFormat = "yyyy/MM/dd ZZZZ"
+    let yearMonthDay = formatter.string(from: date)
+    formatter.dateFormat = "yyyy/MM/dd ZZZZ HH:mm:ss"
+    
+    for (index, period) in schedule.periods.enumerated() {
+        
+        let timeSincePeriodStart = formatter.date(from: "\(yearMonthDay) \(period.start):00")!.timeIntervalSince(date)
+        let timeSincePeriodEnd = formatter.date(from: "\(yearMonthDay) \(period.end):00")!.timeIntervalSince(date)
+        
+        // If period start is in future (Currently in passing period)
+        if timeSincePeriodStart > 0 {
+            if index == 0 {
+                // If before school, do not display period ring
+                return nil
+            }
+            return Period(name: "\(schedule.periods[index-1].name) → \(period.name)", start: schedule.periods[index-1].end, end: period.start)
+        } // If period end is in future (Currently in a period)
+        else if timeSincePeriodEnd > 0 {
+            return period
+        }
+    }
+    return nil
+}

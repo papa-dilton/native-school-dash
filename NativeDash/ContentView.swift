@@ -42,8 +42,6 @@ struct ContentView: View {
                 Calendar.current.isDateInToday($0.date!)
             }
             todaySchedule = (scheduleFromWeeklyStore.count > 0) ? scheduleFromWeeklyStore[0].schedule!.asDayType() : todaySchedule
-            print(scheduleFromWeeklyStore[0].schedule!.asDayType().name)
-            print(todaySchedule.name)
         }
         
         // Load schedules from local stores while app launches
