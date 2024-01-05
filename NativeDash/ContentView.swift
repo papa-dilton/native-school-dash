@@ -38,35 +38,39 @@ struct ContentView: View {
         
         // Load what the day type is today from stores while app launches
         .task {
-            let scheduleFromWeeklyStore: [StoredScheduleOnDate] = weeklyScheduleStore.filter {Calendar.current.isDateInToday($0.date!)}
+            let scheduleFromWeeklyStore: [StoredScheduleOnDate] = weeklyScheduleStore.filter {
+                Calendar.current.isDateInToday($0.date!)
+            }
             todaySchedule = (scheduleFromWeeklyStore.count > 0) ? scheduleFromWeeklyStore[0].schedule!.asDayType() : todaySchedule
+            print(scheduleFromWeeklyStore[0].schedule!.asDayType().name)
+            print(todaySchedule.name)
         }
         
         // Load schedules from local stores while app launches
         .task {
-            
-            var unsortedSchedules: [DayType] = []
+            var allSchedules: [DayType] = []
             for dayType in todayScheduleStore {
-                unsortedSchedules.append(DayType(name: dayType.wrappedName, periods: dayType.periodsArray))
+                allSchedules.append(DayType(name: dayType.wrappedName, periods: dayType.periodsArray))
             }
-            let topSchedule = unsortedSchedules.remove(at: unsortedSchedules.firstIndex(where: {$0.name == todaySchedule.name}) ?? 0)
-            unsortedSchedules.sort(by: {$0.name.first! < $1.name.first!})
-            unsortedSchedules.insert(topSchedule, at: 0)
-            schedules = unsortedSchedules
+            
+            // Sort the list so that the schedule today is at the top, and the others are in alphabetical order
+            let topSchedule = allSchedules.remove(at: allSchedules.firstIndex(where: {$0.name == todaySchedule.name}) ?? 0)
+            allSchedules.sort(by: {$0.name.first! < $1.name.first!})
+            allSchedules.insert(topSchedule, at: 0)
+            schedules = allSchedules
         }
 
         // Fetch schedule data from API to keep StoredDayType up to date
         
         .task {
             do {
-                let fetchedSchedules = try await getDayTypeFromApi()
+                var fetchedSchedules = try await getDayTypeFromApi()
             
                 // Set UI State to new schedules
-                var unsortedSchedules = fetchedSchedules?.dayTypes ?? [DayType(name: "Fetch Failed", periods: [])]
-                let topSchedule = unsortedSchedules.remove(at: unsortedSchedules.firstIndex(where: {$0.name == todaySchedule.name}) ?? 0)
-                unsortedSchedules.sort(by: {$0.name.first! < $1.name.first!})
-                unsortedSchedules.insert(topSchedule, at: 0)
-                schedules = unsortedSchedules
+                let topSchedule = fetchedSchedules!.dayTypes.remove(at: fetchedSchedules!.dayTypes.firstIndex(where: {$0.name == todaySchedule.name}) ?? 0)
+                fetchedSchedules!.dayTypes.sort(by: {$0.name.first! > $1.name.first!})
+                fetchedSchedules!.dayTypes.insert(topSchedule, at: 0)
+                schedules = fetchedSchedules!.dayTypes
                 
                 // Delete previous local stores
                 todayScheduleStore.forEach(viewContext.delete)
@@ -113,8 +117,8 @@ struct ContentView: View {
                     newSchedule.date = date
                     let possibleSchedule = todayScheduleStore.filter {$0.name == scheduleOnDate?.dayTypeOnDate.name}
                     newSchedule.schedule = possibleSchedule.count > 0 ? possibleSchedule[0] : todayScheduleStore[0]
+                    try viewContext.save()
                 }
-                try viewContext.save()
             } catch {
                 schedules = [DayType(name: "Schedule Fetch Error", periods: [])]
             }

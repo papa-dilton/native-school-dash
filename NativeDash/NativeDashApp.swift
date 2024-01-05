@@ -10,7 +10,7 @@ import BackgroundTasks
 
 @main
 struct NativeDashApp: App {
-    @State var todaySchedule: DayType = DayType(name: "Fetch Awaiting...", periods: [])
+    @State var todaySchedule: DayType
     @State var schedules: [DayType] = []
     
     let persistenceController = PersistenceController.shared
